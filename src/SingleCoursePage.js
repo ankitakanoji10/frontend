@@ -20,7 +20,7 @@ const SingleCoursePage = ({ match }) => {
   const fetchCourseRating = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/course/${params.cid}/rating`
+        `https://unisync-api.onrender.com/course/${params.cid}/rating`
       );
       const data = response.data;
 
@@ -36,7 +36,7 @@ const SingleCoursePage = ({ match }) => {
   const fetchSingleCourse = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/course/single-course/${params.cid}`
+        `https://unisync-api.onrender.com/course/single-course/${params.cid}`
       );
       const data = response.data;
 
@@ -54,7 +54,7 @@ const SingleCoursePage = ({ match }) => {
   const fetchCourseComments = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/course/${params.cid}/comments`
+        `https://unisync-api.onrender.com/course/${params.cid}/comments`
       );
       const data = response.data;
 
@@ -71,7 +71,7 @@ const SingleCoursePage = ({ match }) => {
     try {
       // Make a request to post a new comment
       const response = await axios.post(
-        `http://localhost:8000/course/${params.cid}/post-comment`,
+        `https://unisync-api.onrender.com/course/${params.cid}/post-comment`,
         {
           comment: newComment,
         },
@@ -96,7 +96,7 @@ const SingleCoursePage = ({ match }) => {
     try {
       // Make a request to post a new rating
       const response = await axios.post(
-        `http://localhost:8000/course/${params.cid}/post-rating`,
+        `https://unisync-api.onrender.com/course/${params.cid}/post-rating`,
         {
           userrating: userRating,
         },
