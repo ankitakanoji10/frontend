@@ -32,7 +32,7 @@ const SingleProjectPage = ({ match }) => {
   const fetchOwner = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/project/${params.pid}/get-owner`,
+        `https://unisync-api.onrender.com/project/${params.pid}/get-owner`,
         {
           withCredentials: true,
         }
@@ -48,7 +48,7 @@ const SingleProjectPage = ({ match }) => {
   const handleSearchUser = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/profile/search-user/${searchKeyword}`
+        `https://unisync-api.onrender.com/profile/search-user/${searchKeyword}`
       );
       console.log(response.data);
       setSearchResults(response.data);
@@ -59,7 +59,7 @@ const SingleProjectPage = ({ match }) => {
   const fetchVideos = async () => {
     try {
       const videosResponse = await axios.get(
-        `http://localhost:8000/project/${params.pid}/get-videos`
+        `https://unisync-api.onrender.com/project/${params.pid}/get-videos`
       );
       setVideos(videosResponse.data.videos);
     } catch (error) {
@@ -69,7 +69,7 @@ const SingleProjectPage = ({ match }) => {
   const fetchCourseComments = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/project/${params.pid}/comments`
+        `https://unisync-api.onrender.com/project/${params.pid}/comments`
       );
       const data = response.data;
 
@@ -85,7 +85,7 @@ const SingleProjectPage = ({ match }) => {
   const fetchProjectRating = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/project/${params.pid}/rating`
+        `https://unisync-api.onrender.com/project/${params.pid}/rating`
       );
       const data = response.data;
 
@@ -102,7 +102,7 @@ const SingleProjectPage = ({ match }) => {
     try {
       // Make a request to post a new rating
       const response = await axios.post(
-        `http://localhost:8000/project/${params.pid}/post-rating`,
+        `https://unisync-api.onrender.com/project/${params.pid}/post-rating`,
         {
           userrating: userRating,
         },
@@ -124,7 +124,7 @@ const SingleProjectPage = ({ match }) => {
     try {
       // Make a request to post a new comment
       const response = await axios.put(
-        `http://localhost:8000/project/${params.pid}/post-comment`,
+        `https://unisync-api.onrender.com/project/${params.pid}/post-comment`,
         {
           comment: newComment,
         },
@@ -152,7 +152,7 @@ const SingleProjectPage = ({ match }) => {
     try {
       // Make a request to post a new comment
       const response = await axios.put(
-        `http://localhost:8000/project/${params.pid}/add-help`,
+        `https://unisync-api.onrender.com/project/${params.pid}/add-help`,
         {
           comment: newHelp,
         },
@@ -189,7 +189,7 @@ const SingleProjectPage = ({ match }) => {
       }
 
       const response = await axios.put(
-        `http://localhost:8000/project/${params.pid}/add-contributor`,
+        `https://unisync-api.onrender.com/project/${params.pid}/add-contributor`,
         selectedUser,
         {
           withCredentials: true,
@@ -211,7 +211,7 @@ const SingleProjectPage = ({ match }) => {
         const contributorDetails = await Promise.all(
           contributors.map(async (contributorId) => {
             const response = await axios.get(
-              `http://localhost:8000/profile/${contributorId}`
+              `https://unisync-api.onrender.com/profile/${contributorId}`
             );
             return response.data.user; // Assuming you get the full user details from the profile endpoint
           })
@@ -234,16 +234,16 @@ const SingleProjectPage = ({ match }) => {
     const fetchProject = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/project/${params.pid}`
+          `https://unisync-api.onrender.com/project/${params.pid}`
         );
         setProject(response.data.project);
         const helpResponse = await axios.get(
-          `http://localhost:8000/project/${params.pid}/ask-for-help`
+          `https://unisync-api.onrender.com/project/${params.pid}/ask-for-help`
         );
         console.log(helpResponse.data);
         setHelp(helpResponse.data.help);
         const contriResponse = await axios.get(
-          `http://localhost:8000/project/${params.pid}/get-contributor`
+          `https://unisync-api.onrender.com/project/${params.pid}/get-contributor`
         );
         console.log(contriResponse.data);
         setContributors(contriResponse.data.contributors);
@@ -282,7 +282,7 @@ const SingleProjectPage = ({ match }) => {
       // Assuming you have a function to get the current user details
 
       const response = await axios.delete(
-        `http://localhost:8000/project/${params.pid}/delete-project`,
+        `https://unisync-api.onrender.com/project/${params.pid}/delete-project`,
         {
           withCredentials: true,
         }
@@ -346,7 +346,7 @@ const SingleProjectPage = ({ match }) => {
         className="flex flex-col w-full h-full items-center justify-center"
       >
         <img
-          src={`http://localhost:8000/project/${params.pid}/photo`}
+          src={`https://unisync-api.onrender.com/project/${params.pid}/photo`}
           alt="Project"
           style={{
             maxWidth: "100%", // Adjusts width to not exceed the container's width
@@ -515,7 +515,7 @@ const SingleProjectPage = ({ match }) => {
           <li style={{ listStyleType: "none" }}> {/* Removes bullet points */}
             <Link to={`/user/${contributor._id}`}>
               <img
-                src={`http://localhost:8000/profile/${contributor._id}/get-photo`}
+                src={`https://unisync-api.onrender.com/profile/${contributor._id}/get-photo`}
                 alt="Contributor"
                 style={{
                   maxWidth: "10rem", // Use maxWidth and maxHeight to ensure image responsiveness
@@ -855,7 +855,7 @@ const SingleProjectPage = ({ match }) => {
           {help.map((help, index) => (
             <li key={index} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <img
-                src={`http://localhost:8000/profile/${help.user._id}/get-photo`}
+                src={`https://unisync-api.onrender.com/profile/${help.user._id}/get-photo`}
                 alt="Project"
                 style={{
                   width: "30px",
