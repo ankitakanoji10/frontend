@@ -60,7 +60,7 @@ const CreateProject = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:8000/project/create-project",
+        "https://unisync-api.onrender.com/project/create-project",
         {
           method: "POST",
           body: formDataObj,
@@ -76,7 +76,7 @@ const CreateProject = () => {
         const videoFormData = new FormData();
         videoFormData.append("video", video);
         const videoResponse = await axios.put(
-          `http://localhost:8000/project/${projectId}/add-video`,
+          `https://unisync-api.onrender.com/project/${projectId}/add-video`,
           videoFormData,
           {
             withCredentials: true,
