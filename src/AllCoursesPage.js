@@ -19,7 +19,7 @@ const AllCoursesPage = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/course/search-course/${keyword}`);
+      const response = await axios.get(`https://unisync-api.onrender.com/course/search-course/${keyword}`);
       setCourses(response.data);
       setKeyword('')
     } catch (error) {
@@ -29,7 +29,7 @@ const AllCoursesPage = () => {
 
   const fetchAllCourses = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/course/all-courses');
+      const response = await axios.get('https://unisync-api.onrender.com/course/all-courses');
       const data = response.data;
 
       if (data.success) {
