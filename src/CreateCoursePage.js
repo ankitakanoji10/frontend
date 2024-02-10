@@ -26,7 +26,7 @@ const CreateCoursePage = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8000/course/create-course', formData, {
+      const response = await axios.post('https://unisync-api.onrender.com/course/create-course', formData, {
         withCredentials: true,
       });
 
