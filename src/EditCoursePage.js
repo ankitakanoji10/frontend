@@ -21,7 +21,7 @@ const EditCoursePage = () => {
 
   const fetchCourseInfo = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/course/single-course/${params.cid}`);
+      const response = await axios.get(`https://unisync-api.onrender.com/course/single-course/${params.cid}`);
       const data = response.data;
 
       if (data.success) {
@@ -75,7 +75,7 @@ const EditCoursePage = () => {
 
   const handleEditCourse = async () => {
     try {
-        const response = await axios.put(`http://localhost:8000/course/${params.cid}/edit-course`,  courseInfo , {
+        const response = await axios.put(`https://unisync-api.onrender.com/course/${params.cid}/edit-course`,  courseInfo , {
           withCredentials:true,
       });
       const data = response.data;
