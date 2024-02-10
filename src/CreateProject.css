@@ -1,0 +1,58 @@
+.customPlaceholder::placeholder {
+    color: #8598FF;
+    /* Additional placeholder styles here */
+  }
+
+  textarea:focus {
+    outline: none; /* Removes the default focus outline */
+}
+
+.description-placeholder::placeholder{
+    color: #fff;
+}
+.comment-placeholder::placeholder{
+  color: #fff;
+}
+
+.toggle-button {
+    display: flex;
+    align-items: center;
+  }
+  
+  .toggle-switch {
+    background-color: #bbb;
+    border-radius: 1.12vw;
+    padding: 2px 23px 2px 2px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .toggle-switch.active {
+    background-color: #8598FF; /* Active color */
+  }
+  
+  .toggle-knob {
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+  }
+  
+  .toggle-switch.active .toggle-knob {
+    transform: translateX(20px);
+  }
+  
+  .player-wrapper {
+    width: auto;
+    height: auto; 
+  }
+  .react-player {
+    padding-top: 56.25%; 
+    position: relative; 
+  }
+  
+  .react-player > div {
+    position: absolute; 
+  }
