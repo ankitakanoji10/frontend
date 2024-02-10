@@ -19,7 +19,7 @@ const UserProfilePage = ({ match }) => {
     const fetchUserProfile = async () => {
         try {
         console.log(params.id)
-        const response = await axios.get(`http://localhost:8000/profile/${params.id}`);
+        const response = await axios.get(`https://unisync-api.onrender.com/profile/${params.id}`);
         const data = response.data;
 
           if (data.success) {
@@ -37,7 +37,7 @@ const UserProfilePage = ({ match }) => {
     const fetchCourses= async () => {
         try {
         console.log(params.id)
-        const response = await axios.get(`http://localhost:8000/profile/${params.id}/all-courses`);
+        const response = await axios.get(`https://unisync-api.onrender.com/profile/${params.id}/all-courses`);
         const data = response.data;
 
         if (data.success) {
@@ -53,7 +53,7 @@ const UserProfilePage = ({ match }) => {
     };
     const fetchAllProjects = async () => {
         try {
-          const response = await axios.get(`http://localhost:8000/profile/${params.id}/all-projects`);
+          const response = await axios.get(`https://unisync-api.onrender.com/profile/${params.id}/all-projects`);
           const data = response.data;
     
           if (data.success) {
@@ -92,7 +92,7 @@ const UserProfilePage = ({ match }) => {
       <div className='flex flex-col'>
       <div className='flex w-full flex-col bg-[#8598FF] cursor-pointer hover:opacity-80 justify-center items-center mr-20 'style={{width:'16.66vw', height:'21.14vw', borderRadius:'1vw'}}>
         <div style={{overflow: 'hidden', height:'100%', width:'100%'}}>
-          <img src={`http://localhost:8000/profile/${params.id}/get-photo`} alt={"user profile "} style={{height:'100%', objectFit: 'cover', borderRadius: '10px'}}/>
+          <img src={`https://unisync-api.onrender.com/profile/${params.id}/get-photo`} alt={"user profile "} style={{height:'100%', objectFit: 'cover', borderRadius: '10px'}}/>
         </div>
         
       </div>
