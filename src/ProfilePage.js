@@ -29,7 +29,7 @@ const ProfilePage = () => {
 
   const handleDeletePhoto = async () => {
     try {
-      const response = await axios.delete('http://localhost:8000/profile/delete-photo', { 
+      const response = await axios.delete('https://unisync-api.onrender.com/profile/delete-photo', { 
         withCredentials: true 
       });
       console.log(response.data);
@@ -50,7 +50,7 @@ const ProfilePage = () => {
   // useEffect(() => {
   //   const fetchProfilePhoto = async () => {
   //     try {
-  //       const response = await axios.get('http://localhost:8000/profile/profile-photo', { withCredentials: true });
+  //       const response = await axios.get('https://unisync-api.onrender.com/profile/profile-photo', { withCredentials: true });
   //       if (response.data && response.data.photoUrl) {
   //         setHasProfilePhoto(true);
   //       } else {
@@ -73,7 +73,7 @@ const ProfilePage = () => {
       }
 
       const response = await axios.put(
-        'http://localhost:8000/profile/add-course',
+        'https://unisync-api.onrender.com/profile/add-course',
         { course: newCourse },
         { withCredentials: true }
       );
@@ -119,7 +119,7 @@ const ProfilePage = () => {
     for (var key of formData.entries()) {
       console.log(key[0] + ', ' + key[1]);
     }
-      const response = await axios.put('http://localhost:8000/profile/add-photo', formData, {
+      const response = await axios.put('https://unisync-api.onrender.com/profile/add-photo', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -146,7 +146,7 @@ const ProfilePage = () => {
   }, []);
   const fetchUserProfile = async () => {
     try {
-        const response = await axios.get('http://localhost:8000/profile/setup-profile', {
+        const response = await axios.get('https://unisync-api.onrender.com/profile/setup-profile', {
           withCredentials:true,
       });
       const data = response.data;
@@ -165,7 +165,7 @@ const ProfilePage = () => {
 
   const fetchUserPhoto = async () => {
     try {
-        const response = await axios.get('http://localhost:8000/profile/profile-photo', {
+        const response = await axios.get('https://unisync-api.onrender.com/profile/profile-photo', {
         withCredentials:true,
       });
       const data = response.data;
@@ -188,7 +188,7 @@ const ProfilePage = () => {
 
   const fetchUserCourses = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/profile/profile-courses',  {
+      const response = await axios.get('https://unisync-api.onrender.com/profile/profile-courses',  {
         withCredentials:true,
     });
       const data = response.data;
@@ -205,7 +205,7 @@ const ProfilePage = () => {
 
   const fetchUserProjects = async (userId) => {
     try {
-      const response = await axios.get('http://localhost:8000/profile/profile-projects',  {
+      const response = await axios.get('https://unisync-api.onrender.com/profile/profile-projects',  {
         withCredentials:true,
     });
       const data = response.data;
@@ -221,7 +221,7 @@ const ProfilePage = () => {
     };
     const handleAddSkill = async () => {
         try {
-          const response = await axios.put('http://localhost:8000/profile/add-skills', {
+          const response = await axios.put('https://unisync-api.onrender.com/profile/add-skills', {
             skills,
           },{withCredentials:true});
     
@@ -244,7 +244,7 @@ const ProfilePage = () => {
 
   const handleDeleteProject = async (projectId) => {
     try {
-      const response = await axios.delete(`http://localhost:8000/project/${projectId}/delete-project`, {
+      const response = await axios.delete(`https://unisync-api.onrender.com/project/${projectId}/delete-project`, {
         withCredentials:true
       });
       if (response.data.success) {
@@ -260,7 +260,7 @@ const ProfilePage = () => {
   };
   const handleDeleteCourse = async (courseId) => {
     try {
-      const response = await axios.delete(`http://localhost:8000/course/${courseId}/delete-course`, {
+      const response = await axios.delete(`https://unisync-api.onrender.com/course/${courseId}/delete-course`, {
         withCredentials:true
       });
       if (response.data.success) {
@@ -298,7 +298,7 @@ const ProfilePage = () => {
                         
 
                           <div style={{overflow: 'hidden', height:'100%', width:'100%', zIndex:'50'}}><img
-                              src={'http://localhost:8000/profile/profile-photo'}
+                              src={'https://unisync-api.onrender.com/profile/profile-photo'}
                               
                               alt={"user profile "}
                               style={{height:'100%', objectFit: 'cover', borderRadius: '10px'}}
