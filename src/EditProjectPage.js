@@ -47,7 +47,7 @@ const EditProjectPage = () => {
   const fetchProject = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/project/${params.pid}`
+        `https://unisync-api.onrender.com/project/${params.pid}`
       );
       const data = response.data;
 
@@ -111,7 +111,7 @@ const EditProjectPage = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:8000/project/${params.pid}/edit-project`,
+        `https://unisync-api.onrender.com/project/${params.pid}/edit-project`,
         formDataObj,
         {
           withCredentials: true,
@@ -126,7 +126,7 @@ const EditProjectPage = () => {
         videoFormData.append("video", video);
 
         const videoResponse = await axios.put(
-          `http://localhost:8000/project/${projectId}/add-video`,
+          `https://unisync-api.onrender.com/project/${projectId}/add-video`,
           videoFormData,
           {
             withCredentials: true,
