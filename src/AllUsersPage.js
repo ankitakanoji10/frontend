@@ -13,7 +13,7 @@ const AllUsersPage = () => {
   const handleSearch = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/profile/search-user/${keyword}`
+        `https://unisync-api.onrender.com/profile/search-user/${keyword}`
       );
       setUsers(response.data);
       setKeyword("");
@@ -25,7 +25,7 @@ const AllUsersPage = () => {
     const fetchAllUsers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/profile/all-user"
+          "https://unisync-api.onrender.com/profile/all-user"
         );
         const data = response.data;
 
@@ -107,7 +107,7 @@ const AllUsersPage = () => {
           style={{ padding: "4rem", marginBottom: "1rem", alignItems: "center",width:"20rem" }}>
             <Link to={`/user/${user._id}`}>
               <img
-                src={`http://localhost:8000/profile/${user._id}/get-photo`}
+                src={`https://unisync-api.onrender.com/profile/${user._id}/get-photo`}
                 alt="user"
                 style={{
                   width: "10rem",
