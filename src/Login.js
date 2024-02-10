@@ -5,7 +5,7 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       // Send a request to your backend's login route
-      const authenticationUrl= 'http://localhost:8000/login'
+      const authenticationUrl= 'https://unisync-api.onrender.com/login'
     
       // Handle the response, e.g., redirect to the authentication URL
       
